@@ -70,20 +70,12 @@ var check = function(move) {
 };
 
 var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(move) {
-    //console.info(move);
     var steps = move.split(/\s/);
     var whiteMove = steps[1];
     var blackMove = steps[2];
     console.info(steps[0], whiteMove, blackMove);
 
     var moves = [
-//        {
-//            rule: function(move) {
-//                if (/^[a-h][1-8]$/.test(move)) {
-//                    return "moves pawn to " + move;
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[a-h][1-8]\+?$/.test(move)) {
@@ -91,13 +83,6 @@ var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(m
                 }
             }
         },
-//        {
-//            rule: function(move) {
-//                if (/^[KQRNB][a-h][1-8]$/.test(move)) {
-//                    return "moves " + pieces[move.substr(0,1)] + " to " + move.substr(1,2);
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[KQRNB][a-h][1-8]\+?$/.test(move)) {
@@ -105,13 +90,6 @@ var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(m
                 }
             }
         },
-//        {
-//            rule: function(move) {
-//                if (/^[KQRNB]x[a-h][1-8]$/.test(move)) {
-//                    return pieces[move.substr(0,1)] + " captures " + move.substr(2,2);
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[KQRNB]x[a-h][1-8]\+?$/.test(move)) {
@@ -119,13 +97,6 @@ var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(m
                 }
             }
         },
-//        {
-//            rule: function(move) {
-//                if (/^[a-h][1-8]=[KQRNB]$/.test(move)) {
-//                    return move.substr(0,2) + " promoted to " + pieces[move.substr(3,1)];
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[a-h][1-8]=[KQRNB]\+?$/.test(move)) {
@@ -147,13 +118,6 @@ var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(m
                 }
             }
         },
-//        {
-//            rule: function(move) {
-//                if (/^[a-h]x[a-h][1-8]$/.test(move)) {
-//                    return move.substr(0,1) + " file pawn captures " + move.substr(2,2);
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[a-h]x[a-h][1-8]\+?$/.test(move)) {
@@ -161,13 +125,6 @@ var z = game.replace(/[0-9]*\. [a-zA-Z0-9\+=-]+[ ]+[a-zA-Z0-9\+-]+/g, function(m
                 }
             }
         },
-//        {
-//            rule: function(move) {
-//                if (/^[KQRNB][a-h][a-h][1-8]$/.test(move)) {
-//                    return pieces[move.substr(0,1)] + " on " + move.substr(1,1) + " file moves to " + move.substr(2,2);
-//                }
-//            }
-//        },
         {
             rule: function(move) {
                 if (/^[KQRNB][a-h][a-h][1-8]\+?$/.test(move)) {
